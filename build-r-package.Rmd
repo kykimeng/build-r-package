@@ -1,0 +1,73 @@
+---
+title: "Build Your Own R Package"
+author: "Kim Eng Ky"
+date: "5/30/2019"
+fontsize: 14pt
+output: 
+  beamer_presentation:
+    theme: Madrid
+    colortheme: orchid
+    fonttheme: structurebold
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Why write an R package?
+
+- Avoid having the same function in multiple places
+- Easy to keep track of and reuse functions
+- Document your functions
+- Share and collaborate
+
+## What you need
+
+- RStudio
+- `roxygen2` package installed
+
+# Package Components
+
+## `R/` folder (*required*)
+
+This is where all the R code goes. 
+
+![](./screenshots/r-folder.png)\
+
+
+## DESCRIPTION (*required*)
+
+![](./screenshots/description.png)\
+
+
+Other optional options:
+
+- **Imports**: packages your package needs
+- **URL**: link to source code
+- **BugReports**: link to where bugs can be reported
+
+## `man/` folder (*required*)
+
+Reference documents for each function (or group of functions) accessed by `?` or `help()`.
+
+![](./screenshots/man-folder.png)\
+
+
+## Optional Components
+
+- **vignettes/**: Long and detailed documentation
+- **NAMESPACE**: (*advanced if edited manually*) Automatically generated when using `roxygen2`
+- **data/**: Where you can include `.rda` files available to all users
+- **src/**: (*advanced*) Where you can include compiled code (e.g. C or C++)
+- **inst/**: Additional files (e.g. text files, images, or raw data); can have subdirectories
+- etc.
+
+## References
+
+- **R packages** (http://r-pkgs.had.co.nz/)
+- **Lessons learned from building an R package** (https://towardsdatascience.com/lessons-learned-from-building-an-r-package-75d5263d3814)
+- **Writing an R package from scratch** (https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
+- **Generating Rd files** (https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html)
+
+
+# Let's build a package!
